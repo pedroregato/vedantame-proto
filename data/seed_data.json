@@ -1,0 +1,133 @@
+{
+  "membros": [
+    { "id": "m1", "nome": "Ananda Silva", "cidade": "São Paulo", "estado": "SP" },
+    { "id": "m2", "nome": "Priya Ferreira", "cidade": "Rio de Janeiro", "estado": "RJ" },
+    { "id": "m3", "nome": "Ramakrishna Souza", "cidade": "Belo Horizonte", "estado": "MG" },
+    { "id": "m4", "nome": "Lakshmi Santos", "cidade": "Curitiba", "estado": "PR" },
+    { "id": "m5", "nome": "Vivekananda Costa", "cidade": "Florianópolis", "estado": "SC" }
+  ],
+  "demandas": [
+    {
+      "id": "d1",
+      "membro_id": "m1",
+      "categoria": "Moradia Temporária",
+      "descricao": "Preciso de hospedagem por 2 semanas em SP enquanto me restabeleço após uma cirurgia. Sou vegetariano e respeito ambientes silenciosos.",
+      "status": "Aguardando",
+      "data": "2026-03-10"
+    },
+    {
+      "id": "d2",
+      "membro_id": "m3",
+      "categoria": "Trabalho e Renda",
+      "descricao": "Busco oportunidade de trabalho freelance em design gráfico ou edição de vídeo. Tenho experiência com materiais espirituais e culturais.",
+      "status": "Em contato",
+      "data": "2026-03-08"
+    },
+    {
+      "id": "d3",
+      "membro_id": "m5",
+      "categoria": "Transporte e Locomoção",
+      "descricao": "Preciso de carona de Florianópolis para o retiro em São Paulo no próximo fim de semana. Divido o combustível.",
+      "status": "Aguardando",
+      "data": "2026-03-12"
+    },
+    {
+      "id": "d4",
+      "membro_id": "m2",
+      "categoria": "Apoio Emocional e Escuta",
+      "descricao": "Estou passando por um momento difícil após a perda de um familiar. Gostaria de conversar com alguém do sanga com experiência em luto e espiritualidade.",
+      "status": "Resolvido",
+      "data": "2026-02-28"
+    },
+    {
+      "id": "d5",
+      "membro_id": "m4",
+      "categoria": "Saúde e Acompanhamento Médico",
+      "descricao": "Preciso de indicação de médico de confiança em Curitiba, preferencialmente simpático a práticas de meditação e alimentação vegetariana.",
+      "status": "Aguardando",
+      "data": "2026-03-14"
+    },
+    {
+      "id": "d6",
+      "membro_id": "m1",
+      "categoria": "Eventos e Projetos Espirituais",
+      "descricao": "Preciso de ajuda para organizar o jantar do Durga Puja em SP. Busco voluntários para cozinhar, decorar e recepcionar.",
+      "status": "Em contato",
+      "data": "2026-03-05"
+    },
+    {
+      "id": "d7",
+      "membro_id": "m3",
+      "categoria": "Talentos e Habilidades",
+      "descricao": "Preciso de uma pessoa que saiba tocar tablas ou mridanga para acompanhar os cantos nos encontros semanais em BH.",
+      "status": "Aguardando",
+      "data": "2026-03-11"
+    },
+    {
+      "id": "d8",
+      "membro_id": "m5",
+      "categoria": "Bate-papo Vedanta",
+      "descricao": "Estou estudando o Vivekachudamani e gostaria de encontrar companheiros de estudo para trocar interpretações e dúvidas.",
+      "status": "Aguardando",
+      "data": "2026-03-13"
+    }
+  ],
+  "ofertas": [
+    {
+      "id": "o1",
+      "membro_id": "m2",
+      "categoria": "Moradia Temporária",
+      "descricao": "Tenho um quarto disponível no meu apartamento no Rio por até 30 dias. Ambiente tranquilo, vegetariano. Aceito devotos do movimento.",
+      "data": "2026-03-08"
+    },
+    {
+      "id": "o2",
+      "membro_id": "m4",
+      "categoria": "Trabalho e Renda",
+      "descricao": "Tenho uma pequena empresa de comunicação e posso oferecer trabalho freelance para designers e videomakers alinhados com nossos valores.",
+      "data": "2026-03-07"
+    },
+    {
+      "id": "o3",
+      "membro_id": "m1",
+      "categoria": "Transporte e Locomoção",
+      "descricao": "Viajo regularmente entre SP e RJ de carro e posso oferecer caronas. Tenho lugar para até 2 passageiros.",
+      "data": "2026-03-09"
+    },
+    {
+      "id": "o4",
+      "membro_id": "m5",
+      "categoria": "Apoio Emocional e Escuta",
+      "descricao": "Sou psicólogo formado com especialização em espiritualidade integrativa. Ofereço escuta acolhedora e gratuita para membros do sanga.",
+      "data": "2026-03-01"
+    },
+    {
+      "id": "o5",
+      "membro_id": "m3",
+      "categoria": "Saúde e Acompanhamento Médico",
+      "descricao": "Sou médico clínico geral em BH com interesse em medicina integrativa. Posso oferecer consultas de orientação para membros da comunidade.",
+      "data": "2026-03-06"
+    },
+    {
+      "id": "o6",
+      "membro_id": "m2",
+      "categoria": "Eventos e Projetos Espirituais",
+      "descricao": "Tenho experiência em produção de eventos espirituais. Posso ajudar na logística, comunicação e coordenação de voluntários.",
+      "data": "2026-03-04"
+    },
+    {
+      "id": "o7",
+      "membro_id": "m4",
+      "categoria": "Talentos e Habilidades",
+      "descricao": "Toco tablas há 10 anos e tenho formação no Instituto de Música Indiana de SP. Disponível para acompanhar kirtan e eventos culturais.",
+      "data": "2026-03-10"
+    },
+    {
+      "id": "o8",
+      "membro_id": "m1",
+      "categoria": "Bate-papo Vedanta",
+      "descricao": "Estudo Vedanta Advaita há 15 anos com o Swami. Posso facilitar grupos de estudo semanais online ou presenciais em SP.",
+      "data": "2026-03-02"
+    }
+  ]
+}
