@@ -1,3 +1,4 @@
+## App para execução no Streamlit 
 import streamlit as st
 from ui.theme import inject_css, COLORS
 from ui.components import render_logo
