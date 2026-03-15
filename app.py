@@ -1,5 +1,6 @@
 import streamlit as st
 from ui.theme import inject_css, COLORS
+from ui.components import render_logo
 
 st.set_page_config(
     page_title="VedantaMe",
@@ -12,19 +13,9 @@ inject_css()
 
 # Sidebar
 with st.sidebar:
+    render_logo(max_width="200px")
     st.markdown(
-        f"""
-        <div style="text-align:center;padding:1rem 0 0.5rem 0;">
-            <span style="font-size:2.5rem;">🪷</span>
-            <h2 style="font-family:Georgia,serif;color:#F5F0E8;margin:0.3rem 0 0 0;font-size:1.4rem;">
-                VedantaMe
-            </h2>
-            <p style="color:#aaa;font-size:0.82rem;margin:0.2rem 0 1rem 0;">
-                Rede de Apoio Mútuo<br>Ramakrishna Vedanta · Brasil
-            </p>
-        </div>
-        <hr style="border-color:#333;margin:0 0 1rem 0;">
-        """,
+        '<hr style="border-color:#333;margin:0.5rem 0 1rem 0;">',
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -38,13 +29,11 @@ with st.sidebar:
     )
 
 # Home page
+st.markdown('<div style="padding:2rem 0 0.5rem 0;">', unsafe_allow_html=True)
+render_logo(max_width="200px")
 st.markdown(
     f"""
-    <div style="text-align:center;padding:2rem 0 1.5rem 0;">
-        <span style="font-size:3.5rem;">🪷</span>
-        <h1 style="font-family:Georgia,serif;color:{COLORS['dark']};margin:0.5rem 0 0.3rem 0;font-size:2.4rem;">
-            VedantaMe
-        </h1>
+    <div style="text-align:center;padding:0.5rem 0 1.5rem 0;">
         <p style="color:{COLORS['mid']};font-size:1.15rem;max-width:600px;margin:0 auto 1.5rem auto;line-height:1.7;">
             Uma rede digital de apoio mútuo do Movimento Ramakrishna Vedanta no Brasil —
             conectando quem <strong>precisa</strong> com quem <strong>pode ajudar</strong>.
@@ -53,6 +42,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown('</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 

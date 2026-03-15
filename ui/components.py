@@ -1,6 +1,24 @@
+import base64
+import os
 import streamlit as st
 from ui.theme import CATEGORIA_COLORS, STATUS_COLORS, COLORS
 from core.models import Demanda, Oferta, Membro
+
+_LOGO_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "vedantame_logo.svg")
+
+
+def render_logo(max_width: str = "200px"):
+    """Renderiza o logo SVG via base64 — compatível com Streamlit Cloud."""
+    with open(_LOGO_PATH, "r", encoding="utf-8") as f:
+        svg_content = f.read()
+    b64 = base64.b64encode(svg_content.encode("utf-8")).decode("utf-8")
+    st.markdown(
+        f'<div style="text-align:center;margin:0.5rem 0;">'
+        f'<img src="data:image/svg+xml;base64,{b64}" '
+        f'style="max-width:{max_width};width:100%;"/>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
 
 
 def badge(texto: str, cor: str) -> str:
