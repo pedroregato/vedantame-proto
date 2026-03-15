@@ -1,35 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%">
   <defs>
-    
+    <style>
+      .petals-outer { transform-origin: 140px 140px; animation: spin-cw  18s linear infinite; }
+      .petals-inner { transform-origin: 140px 140px; animation: spin-ccw 12s linear infinite; }
+      .om-pulse     { transform-origin: 140px 140px; animation: pulse     3s ease-in-out infinite; }
+      @keyframes spin-cw  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+      @keyframes spin-ccw { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+      @keyframes pulse {
+        0%, 100% { opacity: 1;    transform: scale(1);    }
+        50%      { opacity: 0.72; transform: scale(0.94); }
+      }
+    </style>
   </defs>
 
-  <!-- Outer petals -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(0   140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(45  140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(90  140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(135 140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(180 140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(225 140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(270 140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="88" rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(315 140 140)" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.32;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Pétalas externas — rotação horária -->
+  <g class="petals-outer">
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(0   140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(45  140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(90  140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(135 140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(180 140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(225 140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(270 140 140)"/>
+    <ellipse cx="140" cy="88"  rx="13" ry="30" fill="#C4813A" opacity="0.32" transform="rotate(315 140 140)"/>
   </g>
 
-  <!-- Inner petals -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(22.5  140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(67.5  140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(112.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(157.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(202.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(247.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(292.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <ellipse cx="140" cy="104" rx="9" ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(337.5 140 140)" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.58;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Pétalas internas — rotação anti-horária -->
+  <g class="petals-inner">
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(22.5  140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(67.5  140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(112.5 140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(157.5 140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(202.5 140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(247.5 140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(292.5 140 140)"/>
+    <ellipse cx="140" cy="104" rx="9"  ry="20" fill="#8B5C2A" opacity="0.58" transform="rotate(337.5 140 140)"/>
   </g>
 
-  <!-- Om -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.782697;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <text x="140" y="148" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="400" fill="#1A1A2E" opacity="0.82" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.82;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:19px;font-weight:400;text-anchor:middle;dominant-baseline:auto">ॐ</text>
+  <!-- ॐ central — pulse -->
+  <g class="om-pulse">
+    <text x="140" y="148"
+          text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="42"
+          font-weight="400"
+          fill="#8B5C2A"
+          opacity="0.9">ॐ</text>
   </g>
 
 </svg>
