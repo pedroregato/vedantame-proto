@@ -39,10 +39,10 @@
 
   <!-- ॐ central — pulse -->
   <g class="om-pulse">
-    <text x="140" y="148"
+    <text x="140" y="146"
           text-anchor="middle"
           font-family="Georgia, 'Times New Roman', serif"
-          font-size="42"
+          font-size="20"
           font-weight="400"
           fill="#8B5C2A"
           opacity="0.9">ॐ</text>
