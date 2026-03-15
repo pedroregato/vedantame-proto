@@ -39,3 +39,8 @@ def get_demandas_por_categoria(categoria: str) -> List[Demanda]:
 
 def get_ofertas_por_categoria(categoria: str) -> List[Oferta]:
     return [o for o in get_ofertas() if o.categoria == categoria]
+
+
+def get_stats() -> dict:
+    from core.analytics import calcular_stats
+    return calcular_stats(get_demandas(), get_ofertas(), get_membros())
