@@ -4,7 +4,8 @@ import streamlit as st
 from ui.theme import CATEGORIA_COLORS, STATUS_COLORS, COLORS
 from core.models import Demanda, Oferta, Membro
 
-_LOGO_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "vedantame_logo.svg")
+_LOGO_PATH   = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "vedantame_logo.svg")
+_SYMBOL_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "vedantame_symbol.svg")
 
 
 def render_logo(max_width: str = "200px"):
@@ -16,6 +17,18 @@ def render_logo(max_width: str = "200px"):
         f'<div style="text-align:center;margin:0.5rem 0;">'
         f'<img src="data:image/svg+xml;base64,{b64}" '
         f'style="max-width:{max_width};width:100%;"/>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def render_symbol(max_width: str = "220px"):
+    """Renderiza o símbolo SVG inline — necessário para preservar animações CSS."""
+    with open(_SYMBOL_PATH, "r", encoding="utf-8") as f:
+        svg_content = f.read()
+    st.markdown(
+        f'<div style="text-align:center;margin:0.5rem auto;max-width:{max_width};">'
+        f'{svg_content}'
         f'</div>',
         unsafe_allow_html=True,
     )

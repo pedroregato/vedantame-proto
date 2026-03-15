@@ -1,7 +1,7 @@
 ## App para execução no Streamlit
 import streamlit as st
 from ui.theme import inject_css, COLORS
-from ui.components import render_logo
+from ui.components import render_logo, render_symbol
 
 st.set_page_config(
     page_title="VedantaMe",
@@ -31,53 +31,9 @@ with st.sidebar:
 
 # Home page
 st.markdown('<div style="padding:2rem 0 0.5rem 0;">', unsafe_allow_html=True)
+render_symbol(max_width="220px")
 st.markdown(
-    """
-    <div style="text-align:center;margin:0.5rem 0;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="max-width:220px;width:100%;">
-        <defs>
-          <style>
-            .petals-outer { transform-origin: 100px 100px; animation: spin-slow 18s linear infinite; }
-            .petals-inner { transform-origin: 100px 100px; animation: spin-slow-rev 12s linear infinite; }
-            .shatkona     { transform-origin: 100px 100px; animation: pulse 3s ease-in-out infinite; }
-            @keyframes spin-slow     { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-            @keyframes spin-slow-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-            @keyframes pulse {
-              0%, 100% { opacity: 1;   transform: scale(1); }
-              50%      { opacity: 0.7; transform: scale(0.93); }
-            }
-          </style>
-        </defs>
-        <g class="petals-outer">
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(0   100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(45  100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(90  100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(135 100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(180 100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(225 100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(270 100 100)"/>
-          <ellipse cx="100" cy="48" rx="10" ry="24" fill="#C4813A" opacity="0.3" transform="rotate(315 100 100)"/>
-        </g>
-        <g class="petals-inner">
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(22.5  100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(67.5  100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(112.5 100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(157.5 100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(202.5 100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(247.5 100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(292.5 100 100)"/>
-          <ellipse cx="100" cy="58" rx="8" ry="18" fill="#8B5C2A" opacity="0.55" transform="rotate(337.5 100 100)"/>
-        </g>
-        <g class="shatkona">
-          <polygon points="100,72 122,110 78,110" fill="none" stroke="#1A1A2E" stroke-width="2"/>
-          <polygon points="100,128 122,90  78,90"  fill="none" stroke="#8B5C2A" stroke-width="2"/>
-          <circle cx="100" cy="100" r="6" fill="#8B5C2A"/>
-          <circle cx="100" cy="100" r="3" fill="#F5F0E8"/>
-        </g>
-      </svg>
-    </div>
-    <h1 style="text-align:center;font-family:Georgia,serif;color:#8B5C2A;margin:0.25rem 0 1rem 0;">VedantaMe</h1>
-    """,
+    f'<h1 style="text-align:center;font-family:Georgia,serif;color:#8B5C2A;margin:0.25rem 0 1rem 0;">VedantaMe</h1>',
     unsafe_allow_html=True,
 )
 st.markdown(
