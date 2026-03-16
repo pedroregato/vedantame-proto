@@ -629,14 +629,9 @@ def render_hero() -> None:
     idx  = st.session_state[_STATE_IDX]
     auto = st.session_state[_STATE_AUTO]
 
-    # ── Injeta CSS (uma vez por sessão) ─────────────────────────────────────
-    if "hero_css_injected" not in st.session_state:
-        st.markdown(_CSS, unsafe_allow_html=True)
-        st.session_state["hero_css_injected"] = True
-
-    # ── Renderiza slide atual ────────────────────────────────────────────────
+    # ── Renderiza CSS + slide atual (sempre junto para sobreviver ao rerun) ──
     st.markdown(
-        f'<div class="vm-hero">{_SLIDES[idx]}</div>',
+        f'{_CSS}<div class="vm-hero">{_SLIDES[idx]}</div>',
         unsafe_allow_html=True,
     )
 
