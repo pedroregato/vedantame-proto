@@ -22,6 +22,22 @@ def render_logo(max_width: str = "200px"):
     )
 
 
+def render_logo_inline(max_width: str = "360px"):
+    """Renderiza o logo SVG inline — preserva animações CSS e cores no fundo claro."""
+    with open(_LOGO_PATH, "r", encoding="utf-8") as f:
+        svg_content = f.read()
+    # Corrige cores projetadas para fundo escuro → fundo claro
+    svg_content = svg_content.replace("fill:rgb(245, 240, 232)", "fill:#8B5C2A")
+    svg_content = svg_content.replace("fill:rgb(144, 144, 176)", "fill:#5A5A7A")
+    svg_content = svg_content.replace('fill="#1A1A2E"', 'fill="#8B5C2A"')
+    st.markdown(
+        f'<div style="text-align:center;margin:1.5rem auto 0.5rem auto;max-width:{max_width};">'
+        f'{svg_content}'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+
 def render_symbol(max_width: str = "220px"):
     """Renderiza o símbolo SVG inline — necessário para preservar animações CSS."""
     with open(_SYMBOL_PATH, "r", encoding="utf-8") as f:
