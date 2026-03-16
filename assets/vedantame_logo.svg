@@ -29,23 +29,23 @@
 
   <!-- Om — menor, peso leve -->
   <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.899395;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <text x="340" y="183" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="400" fill="#1A1A2E" opacity="0.82" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.82;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:19px;font-weight:400;text-anchor:middle;dominant-baseline:auto">ॐ</text>
+    <text x="340" y="183" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="400" fill="#8B5C2A" opacity="0.82" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.82;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:19px;font-weight:400;text-anchor:middle;dominant-baseline:auto">ॐ</text>
   </g>
 
   <!-- Name -->
-  <text x="340" y="268" text-anchor="middle" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:52px;font-weight:700;text-anchor:middle;dominant-baseline:auto">VedantaMe</text>
+  <text x="340" y="268" text-anchor="middle" style="fill:#8B5C2A;stroke:none;font-family:Georgia,serif;font-size:52px;font-weight:700;text-anchor:middle;">VedantaMe</text>
 
   <!-- Subtitle -->
   <text x="340" y="296" text-anchor="middle" style="fill:rgb(196, 129, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:16px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">Rede de Apoio Mútuo</text>
 
   <!-- Org line -->
-  <text x="340" y="320" text-anchor="middle" style="fill:rgb(144, 144, 176);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">RAMAKRISHNA VEDANTA · BRASIL</text>
+  <text x="340" y="320" text-anchor="middle" style="fill:#5A5A7A;stroke:none;font-family:Arial,sans-serif;font-size:11px;text-anchor:middle;">RAMAKRISHNA VEDANTA · BRASIL</text>
 
   <!-- Thin rule -->
   <line x1="240" y1="334" x2="440" y2="334" stroke="#C4813A" stroke-width="0.8" opacity="0.45" style="fill:rgb(0, 0, 0);stroke:rgb(196, 129, 58);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.45;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
   <!-- Seva · Sanga -->
   <text x="272" y="354" text-anchor="middle" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.85;font-family:Georgia, serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">seva</text>
-  <text x="340" y="354" text-anchor="middle" opacity="0.5" style="fill:rgb(144, 144, 176);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">·</text>
+  <text x="340" y="354" text-anchor="middle" opacity="0.5" style="fill:#5A5A7A;stroke:none;opacity:0.5;font-family:Arial,sans-serif;font-size:11px;text-anchor:middle;">·</text>
   <text x="408" y="354" text-anchor="middle" style="fill:rgb(139, 92, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.85;font-family:Georgia, serif;font-size:11px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">sanga</text>
 </svg>
