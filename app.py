@@ -2,7 +2,6 @@
 import streamlit as st
 from ui.theme import inject_css, COLORS
 from ui.components import render_logo, render_symbol
-from ui.hero import render_hero          # ← hero carrossel desacoplado
 
 st.set_page_config(
     page_title="VedantaMe",
@@ -29,9 +28,6 @@ with st.sidebar:
         """,
         unsafe_allow_html=True,
     )
-
-# ── Hero carrossel ────────────────────────────────────────────────────────────
-render_hero()
 
 # ── Texto motivacional ────────────────────────────────────────────────────────
 st.markdown(
