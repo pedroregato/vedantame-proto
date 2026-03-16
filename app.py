@@ -1,7 +1,7 @@
 ## App para execução no Streamlit
 import streamlit as st
 from ui.theme import inject_css, COLORS
-from ui.components import render_logo, render_symbol
+from ui.components import render_logo, render_logo_inline
 
 st.set_page_config(
     page_title="VedantaMe",
@@ -30,9 +30,7 @@ with st.sidebar:
     )
 
 # ── Logo completo (símbolo + nome + subtítulo) ────────────────────────────────
-st.markdown('<div style="padding:2rem 0 0.5rem 0;">', unsafe_allow_html=True)
-render_logo(max_width="340px")
-st.markdown('</div>', unsafe_allow_html=True)
+render_logo_inline(max_width="380px")
 
 # ── Texto motivacional ────────────────────────────────────────────────────────
 st.markdown(
