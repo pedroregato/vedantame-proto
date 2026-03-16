@@ -2,6 +2,7 @@
 import streamlit as st
 from ui.theme import inject_css, COLORS
 from ui.components import render_logo, render_symbol
+from ui.hero import render_hero          # ← hero carrossel desacoplado
 
 st.set_page_config(
     page_title="VedantaMe",
@@ -12,7 +13,7 @@ st.set_page_config(
 
 inject_css()
 
-# Sidebar
+# ── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
     render_logo(max_width="200px")
     st.markdown(
@@ -29,26 +30,10 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-# Home page
-st.markdown('<div style="padding:2rem 0 0.5rem 0;">', unsafe_allow_html=True)
-render_symbol(max_width="220px")
-st.markdown(
-    f'<h1 style="text-align:center;font-family:Georgia,serif;color:#8B5C2A;margin:0.25rem 0 1rem 0;">VedantaMe</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f"""
-    <div style="text-align:center;padding:0.5rem 0 1.5rem 0;">
-        <p style="color:{COLORS['mid']};font-size:1.15rem;max-width:600px;margin:0 auto 1.5rem auto;line-height:1.7;">
-            Uma rede digital de apoio mútuo do Movimento Ramakrishna Vedanta no Brasil —
-            conectando quem <strong>precisa</strong> com quem <strong>pode ajudar</strong>.
-        </p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-st.markdown('</div>', unsafe_allow_html=True)
+# ── Hero carrossel ────────────────────────────────────────────────────────────
+render_hero()
 
+# ── Cards de navegação ────────────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3)
 
 with col1:
