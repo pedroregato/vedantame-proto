@@ -29,13 +29,9 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-# ── Símbolo e título ─────────────────────────────────────────────────────────
+# ── Logo completo (símbolo + nome + subtítulo) ────────────────────────────────
 st.markdown('<div style="padding:2rem 0 0.5rem 0;">', unsafe_allow_html=True)
-render_symbol(max_width="220px")
-st.markdown(
-    f'<h1 style="text-align:center;font-family:Georgia,serif;color:#8B5C2A;margin:0.25rem 0 1rem 0;">VedantaMe</h1>',
-    unsafe_allow_html=True,
-)
+render_logo(max_width="340px")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ── Texto motivacional ────────────────────────────────────────────────────────
