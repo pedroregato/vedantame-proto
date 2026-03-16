@@ -23,17 +23,39 @@ def render_logo(max_width: str = "200px"):
 
 
 def render_logo_inline(max_width: str = "360px"):
-    """Renderiza o logo SVG inline — preserva animações CSS e cores no fundo claro."""
-    with open(_LOGO_PATH, "r", encoding="utf-8") as f:
-        svg_content = f.read()
-    # Corrige cores projetadas para fundo escuro → fundo claro
-    svg_content = svg_content.replace("fill:rgb(245, 240, 232)", "fill:#8B5C2A")
-    svg_content = svg_content.replace("fill:rgb(144, 144, 176)", "fill:#5A5A7A")
-    svg_content = svg_content.replace('fill="#1A1A2E"', 'fill="#8B5C2A"')
+    """
+    Renderiza o logo completo para fundo claro:
+    símbolo animado (inline SVG) + tipografia HTML.
+    Substitui o uso do vedantame_logo.svg na página inicial.
+    """
+    with open(_SYMBOL_PATH, "r", encoding="utf-8") as f:
+        symbol_svg = f.read()
     st.markdown(
-        f'<div style="text-align:center;margin:1.5rem auto 0.5rem auto;max-width:{max_width};">'
-        f'{svg_content}'
-        f'</div>',
+        f"""
+        <div style="text-align:center;margin:2rem auto 0.5rem auto;max-width:{max_width};">
+            <div style="max-width:160px;margin:0 auto 0.8rem auto;">
+                {symbol_svg}
+            </div>
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:2.6rem;
+                        font-weight:700;color:#8B5C2A;line-height:1;margin-bottom:0.3rem;">
+                VedantaMe
+            </div>
+            <div style="font-family:Georgia,serif;font-size:1rem;font-style:italic;
+                        color:#C4813A;margin-bottom:0.25rem;">
+                Rede de Apoio Mútuo
+            </div>
+            <div style="font-family:Arial,sans-serif;font-size:0.7rem;letter-spacing:0.12em;
+                        color:#5A5A7A;text-transform:uppercase;margin-bottom:0.4rem;">
+                Ramakrishna Vedanta · Brasil
+            </div>
+            <div style="width:120px;height:1px;background:#C4813A;opacity:0.4;
+                        margin:0.4rem auto 0.4rem auto;"></div>
+            <div style="font-family:Georgia,serif;font-size:0.8rem;font-style:italic;
+                        color:#8B5C2A;opacity:0.85;letter-spacing:0.05em;">
+                seva &nbsp;·&nbsp; sanga
+            </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
