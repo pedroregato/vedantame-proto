@@ -33,6 +33,55 @@ with st.sidebar:
 # ── Hero carrossel ────────────────────────────────────────────────────────────
 render_hero()
 
+# ── Texto motivacional ────────────────────────────────────────────────────────
+st.markdown(
+    f"""
+    <div style="
+        max-width: 680px;
+        margin: 0.5rem auto 2rem auto;
+        text-align: center;
+        padding: 0 1rem;
+    ">
+        <p style="
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            color: {COLORS['mid']};
+            line-height: 1.85;
+            margin-bottom: 0.9rem;
+        ">
+            Em toda comunidade existe uma teia invisível de dons e necessidades —
+            talentos que aguardam uma chamada, mãos prontas para estender-se,
+            corações que buscam encontrar os seus.
+        </p>
+        <p style="
+            font-family: Georgia, serif;
+            font-size: 1.05rem;
+            color: {COLORS['mid']};
+            line-height: 1.85;
+            margin-bottom: 0.9rem;
+        ">
+            O <strong style="color:{COLORS['primary']};">VedantaMe</strong> nasce
+            para tornar essa teia visível — um espaço onde o
+            <em>seva</em> (serviço desinteressado) e a <em>sanga</em>
+            (associação com o sagrado) ganham forma digital,
+            conectando quem precisa com quem pode ajudar.
+        </p>
+        <p style="
+            font-family: Georgia, serif;
+            font-size: 0.95rem;
+            color: {COLORS['mid']};
+            line-height: 1.75;
+            font-style: italic;
+        ">
+            Liderado pelo Swami Nirmalatmananda, o projeto é uma iniciativa
+            do Movimento Ramakrishna Vedanta no Brasil — aberta a membros,
+            amigos e simpatizantes que desejam servir e ser servidos com amor.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 # ── Cards de navegação ────────────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3)
 
