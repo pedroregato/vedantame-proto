@@ -10,7 +10,6 @@ Uso:
     render_hero()
 """
 
-import time
 import streamlit as st
 
 # ── Paleta (espelha ui/theme.py sem importá-la) ─────────────────────────────
@@ -25,10 +24,8 @@ _BORDER  = "rgba(139,58,42,0.15)"
 
 # ── Configurações do carrossel ───────────────────────────────────────────────
 _TOTAL_SLIDES  = 5
-_AUTO_INTERVAL = 6          # segundos entre avanços automáticos
 _STATE_IDX     = "hero_slide_idx"
 _STATE_AUTO    = "hero_auto_play"
-_STATE_LAST    = "hero_last_auto"
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -627,20 +624,10 @@ def render_hero() -> None:
     if _STATE_IDX  not in st.session_state:
         st.session_state[_STATE_IDX]  = 0
     if _STATE_AUTO not in st.session_state:
-        st.session_state[_STATE_AUTO] = True
-    if _STATE_LAST not in st.session_state:
-        st.session_state[_STATE_LAST] = time.time()
+        st.session_state[_STATE_AUTO] = False   # manual por padrão no Cloud
 
     idx  = st.session_state[_STATE_IDX]
     auto = st.session_state[_STATE_AUTO]
-
-    # ── Auto-play ────────────────────────────────────────────────────────────
-    if auto:
-        now = time.time()
-        if now - st.session_state[_STATE_LAST] >= _AUTO_INTERVAL:
-            st.session_state[_STATE_IDX]  = (idx + 1) % _TOTAL_SLIDES
-            st.session_state[_STATE_LAST] = now
-            idx = st.session_state[_STATE_IDX]
 
     # ── Injeta CSS (uma vez por sessão) ─────────────────────────────────────
     if "hero_css_injected" not in st.session_state:
@@ -663,7 +650,6 @@ def render_hero() -> None:
         if st.button("←", key="hero_prev", help="Slide anterior", use_container_width=True):
             st.session_state[_STATE_IDX]  = (idx - 1) % _TOTAL_SLIDES
             st.session_state[_STATE_AUTO] = False
-            st.session_state[_STATE_LAST] = time.time()
             st.rerun()
 
     # Dots de navegação
@@ -673,7 +659,6 @@ def render_hero() -> None:
             if st.button(labels[i], key=f"hero_dot_{i}", use_container_width=True, type=btn_type):
                 st.session_state[_STATE_IDX]  = i
                 st.session_state[_STATE_AUTO] = False
-                st.session_state[_STATE_LAST] = time.time()
                 st.rerun()
 
     # Botão próximo
@@ -681,20 +666,17 @@ def render_hero() -> None:
         if st.button("→", key="hero_next", help="Próximo slide", use_container_width=True):
             st.session_state[_STATE_IDX]  = (idx + 1) % _TOTAL_SLIDES
             st.session_state[_STATE_AUTO] = False
-            st.session_state[_STATE_LAST] = time.time()
             st.rerun()
 
-    # Botão auto-play
+    # Botão auto-play — no Streamlit Cloud avança manualmente ao clicar
     with cols[8]:
-        label = "⏸ Pausar" if auto else "▶ Auto"
+        label = "⏭ Próximo" if auto else "▶ Auto"
         if st.button(label, key="hero_auto", use_container_width=True):
-            st.session_state[_STATE_AUTO] = not auto
-            st.session_state[_STATE_LAST] = time.time()
+            if not auto:
+                # Ativa modo "auto": cada clique avança um slide
+                st.session_state[_STATE_AUTO] = True
+            else:
+                st.session_state[_STATE_IDX] = (idx + 1) % _TOTAL_SLIDES
             st.rerun()
 
     st.markdown("<div style='margin-bottom:1.2rem;'></div>", unsafe_allow_html=True)
-
-    # ── Re-run para auto-play ────────────────────────────────────────────────
-    if st.session_state[_STATE_AUTO]:
-        time.sleep(0.5)
-        st.rerun()
