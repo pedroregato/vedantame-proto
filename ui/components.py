@@ -24,28 +24,40 @@ def render_logo(max_width: str = "200px"):
 
 def render_logo_inline(max_width: str = "360px"):
     """
-    Renderiza o logo completo inline para fundo claro.
-    Usa vedantame_logo.svg com cores corrigidas para fundo claro (#8B5C2A no nome).
-    SVG inline garante que o Streamlit não bloqueie estilos.
+    Renderiza logo completo para fundo claro.
+    SVG inline para o símbolo animado + st.markdown nativo para o texto
+    (Streamlit remove <text> de SVGs e sanitiza <div style> arbitrários).
     """
-    with open(_LOGO_PATH, "r", encoding="utf-8") as f:
-        svg = f.read()
-    # Corrige o nome "VedantaMe": branco → marrom primário
-    svg = svg.replace(
-        "fill:rgb(245, 240, 232)",
-        "fill:#8B5C2A",
-    )
-    # Corrige linhas de org/dot: lilás claro → cinza-roxo legível
-    svg = svg.replace(
-        "fill:rgb(144, 144, 176)",
-        "fill:#5A5A7A",
-    )
-    # Corrige Om: atributo fill escuro → marrom primário
-    svg = svg.replace('fill="#1A1A2E"', 'fill="#8B5C2A"')
+    with open(_SYMBOL_PATH, "r", encoding="utf-8") as f:
+        symbol_svg = f.read()
+    # Símbolo animado
     st.markdown(
-        f'<div style="text-align:center;margin:2rem auto 1rem auto;max-width:{max_width};">'
-        f'{svg}'
+        f'<div style="text-align:center;margin:1.5rem auto 0 auto;max-width:160px;">'
+        f'{symbol_svg}'
         f'</div>',
+        unsafe_allow_html=True,
+    )
+    # Título via markdown nativo — nunca bloqueado pelo Streamlit
+    st.markdown(
+        "<h1 style='text-align:center;font-family:Georgia,serif;"
+        "color:#8B5C2A;margin:0.3rem 0 0.1rem 0;'>VedantaMe</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p style='text-align:center;font-family:Georgia,serif;font-style:italic;"
+        "color:#C4813A;font-size:1rem;margin:0 0 0.2rem 0;'>Rede de Apoio Mútuo</p>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p style='text-align:center;font-family:Arial,sans-serif;font-size:0.7rem;"
+        "letter-spacing:0.1em;color:#5A5A7A;margin:0 0 0.3rem 0;'>"
+        "RAMAKRISHNA VEDANTA · BRASIL</p>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p style='text-align:center;font-family:Georgia,serif;font-style:italic;"
+        "color:#8B5C2A;font-size:0.85rem;opacity:0.85;margin:0 0 1.5rem 0;'>"
+        "seva &nbsp;·&nbsp; sanga</p>",
         unsafe_allow_html=True,
     )
 
